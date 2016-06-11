@@ -57,7 +57,7 @@
       if(page == undefined) {
         resultElement.value = null;
       } else {
-        resultElement.value = "http://facebook-rss-feed.herokuapp.com/?fb-id=" + page;
+        resultElement.value = window.location.href + "?fb-id=" + page;
       }
     });
 
