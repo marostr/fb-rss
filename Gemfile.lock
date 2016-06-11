@@ -10,12 +10,14 @@ GEM
       multi_json
     multi_json (1.12.1)
     multipart-post (2.0.0)
+    rack (1.6.4)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   koala
+  rack
 
 RUBY VERSION
    ruby 2.3.1p112
