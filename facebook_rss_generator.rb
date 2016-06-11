@@ -37,6 +37,6 @@ class FacebookRSSGenerator
     formatted_description = description.gsub("\n", '<br />')
     "<![CDATA[\
     #{formatted_description}\
-    #]]>"
+    ]]>"
   end
 end
