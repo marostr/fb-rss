@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Facebook RSS Feed</title>
+  <meta name="description" content="">
+  <meta name="author" content="MarcinO @tolhaje">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <div class="row">
+      <div class="twelve columns">
+        <h1 style="margin-top: 18rem; text-align: center;">Facebook RSS Feed</h1>
+        <p style="text-align: center;">To get Facebook site as RSS Feed, just paste link below and copy generated link to your favourite feed reader.</p>
+
+        <div class="row">
+          <div class="eight columns offset-by-two">
+            <input class="u-full-width" type="text" placeholder="https://www.facebook.com/gdziekogo" id="pageInput">
+            <input class="u-full-width js-copytextarea" type="text" id="result">
+            <input class="button-primary js-textareacopybtn" type="button" value="copy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script type="text/javascript">
+    document.getElementById('pageInput').addEventListener("input", function(event) {
+      var page = event.target.value.replace("http://", "").replace("https://", "").split("/")[1];
+      var resultElement = document.getElementById('result');
+      if(page == undefined) {
+        resultElement.value = null;
+      } else {
+        resultElement.value = "http://facebook-rss-feed.herokuapp.com/?fb-id=" + page;
+      }
+    });
+
+    var copyTextareaBtn = document.querySelector('.js-textareacopybtn');
+
+    copyTextareaBtn.addEventListener('click', function(event) {
+      var copyTextarea = document.querySelector('.js-copytextarea');
+      copyTextarea.select();
+
+      try {
+        var successful = document.execCommand('copy');
+        var msg = successful ? 'successful' : 'unsuccessful';
+      } catch (err) {
+        console.log('Oops, unable to copy');
+      }
+    });
+  </script>
+
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>
