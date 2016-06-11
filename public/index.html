@@ -21,31 +21,66 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/skeleton.css">
-
+  <style>
+    html, body {
+      height: 100%;
+    }
+    .table-container {
+      display: table;
+      height: 100%;
+      width: 100%;
+    }
+    .table-block {
+      display: table-row;
+      height: 1px;
+    }
+    .footer-push {
+      height: auto;
+    }
+    #footer {
+      /* Placeholder footer styles */
+      text-align: center;
+    }
+  </style>
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="images/favicon.png">
 
 </head>
 <body>
+  <div class="table-container">
+    <div class="table-block footer-push">
 
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <div class="container">
-    <div class="row">
-      <div class="twelve columns">
-        <h1 style="margin-top: 18rem; text-align: center;">Facebook RSS Feed</h1>
-        <p style="text-align: center;">To get Facebook site as RSS Feed, just paste link below and copy generated link to your favourite feed reader.</p>
-
+      <div class="container">
         <div class="row">
-          <div class="eight columns offset-by-two">
-            <input class="u-full-width" type="text" placeholder="https://www.facebook.com/gdziekogo" id="pageInput">
-            <input class="u-full-width js-copytextarea" type="text" id="result">
-            <input class="button-primary js-textareacopybtn" type="button" value="copy">
+          <div class="twelve columns">
+            <h1 style="margin-top: 18rem; text-align: center;">Facebook RSS Feed</h1>
+            <p style="text-align: center;">To get Facebook site as RSS Feed, just paste link below and copy generated link to your favourite feed reader.</p>
+
+            <div class="row">
+              <div class="eight columns offset-by-two">
+                <input class="u-full-width" type="text" placeholder="https://www.facebook.com/gdziekogo" id="pageInput">
+                <input class="u-full-width js-copytextarea" type="text" id="result">
+                <input class="button-primary js-textareacopybtn" type="button" value="copy">
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
+
+
+    <div class="table-block">
+      <!-- Page Footer Layout
+      –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+      <div class="container">
+        <footer id="footer" class="twelve columns">
+          <p>Made by <a href="https://github.com/tolhaje">@tolhaje</a>. Code on GitHub.</p>
+        </footer>
+      </div> <!-- end footer div.container -->
+    </div>  <!-- end footer div.table-block -->
   </div>
 
   <!-- JS
